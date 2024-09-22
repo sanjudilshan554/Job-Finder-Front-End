@@ -107,80 +107,37 @@
     </div>
     <!-- How  Apply Process End-->
 
-    <!-- Testimonial Start -->
     <div class="testimonial-area testimonial-padding">
         <div class="container">
-            <!-- Testimonial contents -->
             <div class="row d-flex justify-content-center">
                 <div class="col-xl-8 col-lg-8 col-md-10">
-                    <div class="h1-testimonial-active dot-style">
-                        <!-- Single Testimonial -->
-                        <div class="single-testimonial text-center">
-                            <!-- Testimonial Content -->
-                            <div class="testimonial-caption ">
-                                <!-- founder -->
-                                <div class="testimonial-founder  ">
-                                    <div class="founder-img mb-30">
-                                        <img src="../../vendor/img/testmonial/testimonial-founder.png" alt="">
-                                        <span>Margaret Lawson</span>
-                                        <p>Creative Director</p>
+                    <swiper :modules="[Autoplay]" :autoplay="{ delay: 2000 }" loop :slides-per-view="1"
+                        space-between="20">
+                        <swiper-slide v-for="(testimonial, index) in testimonials" :key="index">
+                            <div class="single-testimonial text-center">
+                                <div class="testimonial-caption">
+                                    <div class="testimonial-founder">
+                                        <div class="founder-img mb-30">
+                                            <img :src="testimonial.img" alt="Testimonial Image" />
+                                            <span>{{ testimonial.name }}</span>
+                                            <p>{{ testimonial.title }}</p>
+                                        </div>
+                                    </div>
+                                    <div class="testimonial-top-cap">
+                                        <p>{{ testimonial.content }}</p>
                                     </div>
                                 </div>
-                                <div class="testimonial-top-cap">
-                                    <p>“I am at an age where I just want to be fit and healthy our bodies are our
-                                        responsibility! So start caring for your body and it will care for you. Eat
-                                        clean it will care for you and workout hard.”</p>
-                                </div>
                             </div>
-                        </div>
-                        <!-- Single Testimonial -->
-                        <div class="single-testimonial text-center">
-                            <!-- Testimonial Content -->
-                            <div class="testimonial-caption ">
-                                <!-- founder -->
-                                <div class="testimonial-founder  ">
-                                    <div class="founder-img mb-30">
-                                        <img src="../../vendor/img/testmonial/testimonial-founder.png" alt="">
-                                        <span>Margaret Lawson</span>
-                                        <p>Creative Director</p>
-                                    </div>
-                                </div>
-                                <div class="testimonial-top-cap">
-                                    <p>“I am at an age where I just want to be fit and healthy our bodies are our
-                                        responsibility! So start caring for your body and it will care for you. Eat
-                                        clean it will care for you and workout hard.”</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Single Testimonial -->
-                        <div class="single-testimonial text-center">
-                            <!-- Testimonial Content -->
-                            <div class="testimonial-caption ">
-                                <!-- founder -->
-                                <div class="testimonial-founder  ">
-                                    <div class="founder-img mb-30">
-                                        <img src="../../vendor/img/testmonial/testimonial-founder.png" alt="">
-                                        <span>Margaret Lawson</span>
-                                        <p>Creative Director</p>
-                                    </div>
-                                </div>
-                                <div class="testimonial-top-cap">
-                                    <p>“I am at an age where I just want to be fit and healthy our bodies are our
-                                        responsibility! So start caring for your body and it will care for you. Eat
-                                        clean it will care for you and workout hard.”</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
+                        </swiper-slide>
+                    </swiper>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Testimonial End -->
 
     <!-- Online CV Area Start -->
-    <div class="online-cv cv-bg section-overly pt-90 pb-120"
-        style="background-image: url('img/gallery/cv_bg.jpg');">
+    <div class="online-cv cv-bg section-overly pt-90 pb-120" style="background-image: url('img/gallery/cv_bg.jpg');">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-xl-10">
@@ -252,5 +209,33 @@
     <!-- Blog Area End -->
 </template>
 
-<script>
+<script setup>
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import 'swiper/swiper-bundle.css';
+import { Autoplay } from 'swiper/modules';
+
+
+const testimonials = [
+    {
+        img: new URL('../../assets/img/testmonial/testimonial-founder.png', import.meta.url).href,
+        name: "Margaret Lawson",
+        title: "Creative Director",
+        content:
+            "“I am at an age where I just want to be fit and healthy our bodies are our responsibility! So start caring for your body and it will care for you. Eat clean it will care for you and workout hard.”",
+    },
+    {
+        img: new URL('../../assets/img/testmonial/testimonial-founder.png', import.meta.url).href,
+        name: "John Doe",
+        title: "Fitness Coach",
+        content:
+            "“Fitness is not about being better than someone else, it's about being better than you used to be. Your health is an investment, not an expense.”",
+    },
+    {
+        img: new URL('../../assets/img/testmonial/testimonial-founder.png', import.meta.url).href,
+        name: "Jane Smith",
+        title: "Wellness Expert",
+        content:
+            "“Wellness is the complete integration of body, mind, and spirit—the realization that everything we do, think, feel, and believe has an effect on our state of well-being.”",
+    },
+];
 </script>
