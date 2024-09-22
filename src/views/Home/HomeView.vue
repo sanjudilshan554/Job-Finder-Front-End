@@ -159,7 +159,7 @@
     <!-- Our Services End -->
 
     <!-- Online CV Area Start -->
-    <div class="online-cv cv-bg section-overly pt-90 pb-120" data-background="assets/img/gallery/cv_bg.jpg">
+    <div class="online-cv cv-bg section-overly pt-90 pb-120" style="background-image: url('/img/gallery/cv_bg.jpg');">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-xl-10">
@@ -283,7 +283,7 @@
     <!-- Featured_job_end -->
 
     <!-- How  Apply Process Start-->
-    <div class="apply-process-area apply-bg pt-150 pb-150" data-background="../../vendor/img/gallery/how-applybg.png">
+    <div class="apply-process-area apply-bg pt-150 pb-150" style="background-image: url('/img/gallery/how-applybg.png');"> 
         <div class="container">
             <!-- Section Tittle -->
             <div class="row">
